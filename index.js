@@ -14,14 +14,15 @@ function teste(x, y){
     print(`${this.nome} = ${x+y}`)
 }
 //chamando direto nao tem (this.nome) no contexto global
+//portanto vai aparecer 'undefined' para o (this.nome)
 teste(5,5)
 
-//chamando usando objeto a() como contexto para (this.nome)
+//chamando usando objeto (a) como contexto para (this.nome)
 //esse objeto (a) contem propriedade nome que podemos usar emprestado
 //passando tambem valores para x e y que está na definicao da funcao
 teste.call(a, 5, 5)
 
-//chamando usando objeto b() como contexto para (this.nome)
+//chamando usando objeto (b) como contexto para (this.nome)
 //igual funcao call acima mas ao invez de usar valores um por um
 //para x e y, usamos vetor
 const vet = [5, 5]
